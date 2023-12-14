@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Schema;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -15,10 +16,10 @@ class AppServiceProvider extends ServiceProvider
     }
 
     /**
-     * Bootstrap any application services.
+     * define comprimento padrão de string para esquemas de banco de dados
      */
     public function boot(): void
     {
-        //
+        Schema::defaultStringLength(191);
     }
 }
