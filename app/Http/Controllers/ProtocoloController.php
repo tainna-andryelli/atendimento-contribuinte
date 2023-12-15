@@ -3,15 +3,24 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\ModelProtocolo;
 
 class ProtocoloController extends Controller
 {
+    private $objProtocolo;
+
+    public function __construct()
+    {
+        $this->objProtocolo = new ModelProtocolo();
+    }
+    
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('index');
+        $protocolo = $this->objProtocolo->all();
+        return view('protocolo', compact('protocolo'));
     }
 
     /**
@@ -35,7 +44,8 @@ class ProtocoloController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $protocolo=$this->objProtocolo->where('numero', $id)->first();
+        return view('showprotocolo', compact('protocolo'));
     }
 
     /**

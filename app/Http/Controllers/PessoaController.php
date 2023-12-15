@@ -2,16 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ModelPessoa;
 use Illuminate\Http\Request;
 
 class PessoaController extends Controller
 {
+    private $objPessoa;
+
+    public function __construct(){
+        $this->objPessoa = new ModelPessoa();
+    }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $pessoa = $this->objPessoa->paginate(10);
+        return view('pessoa', compact('pessoa'));
     }
 
     /**
@@ -35,7 +42,8 @@ class PessoaController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $pessoa=$this->objPessoa->find($id);
+        return view('showpessoa', compact('pessoa'));
     }
 
     /**

@@ -13,5 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PessoaController;
 use App\Http\Controllers\ProtocoloController;
-Route::resource('/', ProtocoloController::class);
+Route::resource('/', HomeController::class);
+Route::resource('/protocolo', ProtocoloController::class);
+Route::resource('/pessoa', PessoaController::class);

@@ -1,4 +1,4 @@
-@extends('template')
+@extends('template.template')
 
 @section('content')
   <h1>Atendimento ao Contribuinte</h1>

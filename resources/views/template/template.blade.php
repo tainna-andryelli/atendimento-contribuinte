@@ -13,20 +13,19 @@
       <div>
         <ul>
           <li>
-            <a href="#">Home</a>
+            <a href="{{url("/")}}">Home</a>
           </li>
           <li>
-            <a href="#">Pessoa</a>
+            <a href="{{url("/pessoa")}}">Pessoa</a>
           </li>
           <li>
-            <a href="#">Protocolo</a>
+            <a href="{{url("/protocolo")}}">Protocolo</a>
           </li>
         </ul>
       </div>
     </nav>
   </header>
-  <main>
-    @yield('content')
-  </main>
+
+  @yield('content')
 </body>
 </html>
