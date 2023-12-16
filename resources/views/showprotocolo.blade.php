@@ -11,6 +11,8 @@
     Contribuinte: <br>
     @php
     $pessoa = $protocolo->relPessoa;
+    echo 'Nome: '.$pessoa->nome;
+    echo '<br>';
     $dados = ['Cidade: ', 'Bairro: ', 'Rua: ', 'Complemento: '];
     $dadosBanco = ['cidade', 'bairro', 'rua', 'complemento'];
 

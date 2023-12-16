@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ProtocoloRequest;
 use App\Models\ModelPessoa;
-use Illuminate\Http\Request;
 use App\Models\ModelProtocolo;
 
 class ProtocoloController extends Controller
@@ -88,8 +87,9 @@ class ProtocoloController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(string $numero)
     {
-        //
+        $del = $this->objProtocolo->where('numero', $numero)->delete();
+        return ($del) ? "sim" : "não";
     }
 }

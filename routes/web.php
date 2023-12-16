@@ -19,3 +19,4 @@ use App\Http\Controllers\ProtocoloController;
 Route::resource('/', HomeController::class);
 Route::resource('/protocolo', ProtocoloController::class);
 Route::resource('/pessoa', PessoaController::class);
+Route::delete('protocolo/{numero}', 'ProtocoloController@destroy');

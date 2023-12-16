@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-principal);
+    color: var(--preto);
+    background-color: var(--branco);
+}
+
+:root {
+    --font-principal: Fira Sans, Arial, Helvetica, sans-serif;
+    --preto: #0a0a0a;
+    --branco: #fdfffc;
+    --azul: #0c5372;
+    --cinza-1: #96897b;
+    --cinza-2: #404040;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--preto);
+}
+
+.container {
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 40px;
+    margin: 0 auto;
+    gap: 100px;
+}

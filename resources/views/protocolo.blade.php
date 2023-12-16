@@ -22,27 +22,27 @@
     </thead>
 
     <tbody>
-    @foreach($protocolo as $protocolos)
-      @php
-        $pessoa = $protocolos->relPessoa;
-      @endphp
-      <tr>
-        <th scope="row">{{$protocolos->numero}}</th>
-        <td>{{$protocolos->data}}</td>
-        <td>{{$pessoa->nome}}</td>
-        <td>
-          <a href="{{url("protocolo/$protocolos->numero")}}">
-            <button>Visualizar</button>
-          </a>
-          <a href="{{url("protocolo/$protocolos->numero/edit")}}">
-            <button>Editar</button>
-          </a>
-          <a href="{{url("pessoa/$protocolos->numero")}}" class="js-del">
-            <button>Deletar</button
-          </a>
-        </td>
-      </tr>
-    @endforeach
+      @foreach($protocolo as $protocolos)
+        @php
+          $pessoa = $protocolos->relPessoa;
+        @endphp
+        <tr>
+          <th>{{$protocolos->numero}}</th>
+          <td>{{$protocolos->data}}</td>
+          <td>{{$pessoa->nome}}</td>
+          <td>
+            <a href="{{url("protocolo/$protocolos->numero")}}">
+              <button>Visualizar</button>
+            </a>
+            <a href="{{url("protocolo/$protocolos->numero/edit")}}">
+              <button>Editar</button>
+            </a>
+            <a href="{{url("protocolo/$protocolos->numero")}}" class="js-del">
+              <button class="protocolo">Deletar</button>
+            </a>
+          </td>
+        </tr>
+      @endforeach
     </tbody>
   </table>
 @endsection

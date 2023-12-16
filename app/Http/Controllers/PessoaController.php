@@ -91,6 +91,7 @@ class PessoaController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $del=$this->objPessoa->destroy($id);
+        return($del)? "sim" : "não";
     }
 }
