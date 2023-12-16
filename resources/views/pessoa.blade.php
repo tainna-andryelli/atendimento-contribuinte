@@ -4,7 +4,7 @@
 <h1>Pessoas Cadastradas</h1>
 
 <div>
-  <a href="">
+  <a href="{{url("pessoa/create")}}">
     <button>Novo Cadastro</button>
   </a>
 </div>

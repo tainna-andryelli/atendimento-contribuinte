@@ -4,7 +4,7 @@
 <h1>Protocolos Registrados</h1>
 
 <div>
-  <a href="">
+  <a href="{{url("protocolo/create")}}">
     <button>Novo Protocolo</button>
   </a>
 </div>

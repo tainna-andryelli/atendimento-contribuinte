@@ -2,16 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ProtocoloRequest;
+use App\Models\ModelPessoa;
 use Illuminate\Http\Request;
 use App\Models\ModelProtocolo;
 
 class ProtocoloController extends Controller
 {
-    private $objProtocolo;
+    protected $objProtocolo;
+    protected $objPessoa;
 
-    public function __construct()
+    public function __construct(ModelPessoa $objPessoa)
     {
         $this->objProtocolo = new ModelProtocolo();
+        $this->objPessoa = $objPessoa;
     }
     
     /**
@@ -28,15 +32,24 @@ class ProtocoloController extends Controller
      */
     public function create()
     {
-        //
+        $pessoas=$this->objPessoa->all();
+        return view('createprotocolo', compact('pessoas'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(ProtocoloRequest $request)
     {
-        //
+        $cad=$this->objProtocolo->create([
+            'descricao'=>$request->descricao,
+            'data'=>$request->data,
+            'prazo'=>$request->prazo,
+            'contribuinte'=>$request->contribuinte
+        ]);
+        if($cad){
+            return redirect('/protocolo');
+        }
     }
 
     /**
@@ -53,15 +66,23 @@ class ProtocoloController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $protocolo=$this->objProtocolo->where('numero', $id)->first();
+        $pessoas=$this->objPessoa->all();
+        return view('createprotocolo', compact('protocolo', 'pessoas'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(ProtocoloRequest $request, string $id)
     {
-        //
+        $this->objProtocolo->where(['numero'=>$id])->update([
+            'descricao'=>$request->descricao,
+            'data'=>$request->data,
+            'prazo'=>$request->prazo,
+            'contribuinte'=>$request->contribuinte
+        ]);
+        return redirect('protocolo');
     }
 
     /**

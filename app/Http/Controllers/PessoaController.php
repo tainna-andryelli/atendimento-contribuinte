@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\ModelPessoa;
 use Illuminate\Http\Request;
+use App\Http\Requests\PessoaRequest as RequestsPessoaRequest;
 
 class PessoaController extends Controller
 {
-    private $objPessoa;
+    protected $objPessoa;
 
-    public function __construct(){
-        $this->objPessoa = new ModelPessoa();
+    public function __construct(ModelPessoa $objPessoa){
+        $this->objPessoa = $objPessoa;
     }
     /**
      * Display a listing of the resource.
@@ -26,15 +27,27 @@ class PessoaController extends Controller
      */
     public function create()
     {
-        //
+        return view('createpessoa');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(RequestsPessoaRequest $request)
     {
-        //
+        $cad=$this->objPessoa->create([
+            'nome'=>$request->nome,
+            'data_nasc'=>$request->data_nasc,
+            'cpf'=>$request->cpf,
+            'sexo'=>$request->sexo,
+            'cidade'=>$request->cidade,
+            'bairro'=>$request->bairro,
+            'rua'=>$request->rua,
+            'complemento'=>$request->complemento
+        ]);
+        if($cad){
+            return redirect('/pessoa');
+        }
     }
 
     /**
@@ -51,15 +64,26 @@ class PessoaController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $pessoa=$this->objPessoa->find($id);
+        return view('createpessoa', compact('pessoa'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(RequestsPessoaRequest $request, string $id)
     {
-        //
+        $this->objPessoa->where(['id'=>$id])->update([
+            'nome'=>$request->nome,
+            'data_nasc'=>$request->data_nasc,
+            'cpf'=>$request->cpf,
+            'sexo'=>$request->sexo,
+            'cidade'=>$request->cidade,
+            'bairro'=>$request->bairro,
+            'rua'=>$request->rua,
+            'complemento'=>$request->complemento
+        ]);
+        return redirect('pessoa');
     }
 
     /**
