@@ -31,7 +31,7 @@
       </div>
       
       <div class="formulario__div">
-        <label>CPF:*</label>
+        <label>CPF: (somente números)*</label>
         <input type="number" name="cpf" id="cpf" value="{{$pessoa->cpf ?? ''}}" required>
       </div>
 

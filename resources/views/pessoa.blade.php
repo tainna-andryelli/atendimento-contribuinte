@@ -16,7 +16,7 @@
       <tr>
         <th>Id</th>
         <th>Nome</th>
-        <th>Data Nascimento</th>
+        <th>Data de Nascimento</th>
         <th>CPF</th>
         <th>Sexo</th>
         <th>Ação</th>
@@ -28,8 +28,16 @@
         <tr>
           <th>{{$pessoas->id}}</th>
           <td>{{$pessoas->nome}}</td>
-          <td>{{$pessoas->data_nasc}}</td>
-          <td>{{$pessoas->cpf}}</td>
+          <?php
+            $data = $pessoas->data_nasc;
+            $data_formatada = substr($data, 8, 2) . '/' . substr($data, 5, 2) . '/' . substr($data, 0, 4);
+          ?>
+          <td>{{$data_formatada}}</td>
+          <?php
+            $cpf = $pessoas->cpf;
+            $cpf_formatado = substr($cpf, 0, 3) . '.' . substr($cpf, 3, 3) . '.' . substr($cpf, 6, 3) . '-' . substr($cpf, 9, 2);
+          ?>
+          <td>{{$cpf_formatado}}</td>
           <td>{{$pessoas->sexo}}</td>
           <td>
             <a href="{{url("pessoa/$pessoas->id")}}">

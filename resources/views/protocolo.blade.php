@@ -28,7 +28,11 @@
         @endphp
         <tr>
           <th>{{$protocolos->numero}}</th>
-          <td>{{$protocolos->data}}</td>
+          <?php
+            $data = $protocolos->data;
+            $data_formatada = substr($data, 8, 2) . '/' . substr($data, 5, 2) . '/' . substr($data, 0, 4);
+          ?>
+          <td>{{$data_formatada}}</td>
           <td>{{$pessoa->nome}}</td>
           <td>
             <a href="{{url("protocolo/$protocolos->numero")}}">
