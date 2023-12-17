@@ -5,19 +5,33 @@
     padding: 0;
 }
 
-body {
-    font-family: var(--font-principal);
-    color: var(--preto);
-    background-color: var(--branco);
-}
-
 :root {
     --font-principal: Fira Sans, Arial, Helvetica, sans-serif;
     --preto: #0a0a0a;
     --branco: #fdfffc;
     --azul: #0c5372;
-    --cinza-1: #96897b;
+    --cinza-1: #c8c2bc;
     --cinza-2: #404040;
+    --botao-visualizar: #1a936f;
+    --botao-editar: #3f88c5;
+    --botao-deletar: #bc2c1a;
+}
+
+body {
+    font-family: var(--font-principal);
+    font-size: 1rem;
+    color: var(--preto);
+    background-color: var(--branco);
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
+header,
+footer {
+    background-color: var(--azul);
 }
 
 ul {
@@ -31,9 +45,42 @@ a {
 
 .container {
     max-width: 1200px;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
     padding: 40px;
     margin: 0 auto;
-    gap: 100px;
+}
+
+.container h1 {
+    margin-bottom: 20px;
+}
+
+.conteudo {
+    width: 90%;
+    flex-grow: 4;
+}
+
+button,
+.botao__cadastrar {
+    font-size: 1rem;
+    border: 1px solid var(--cinza-2);
+    border-radius: 4px;
+    padding: 10px 20px;
+    color: var(--branco);
+    background-color: var(--azul);
+    margin: 5px 0;
+}
+
+.visualizar {
+    background-color: var(--botao-visualizar);
+}
+
+.editar {
+    background-color: var(--botao-editar);
+}
+
+.deletar {
+    background-color: var(--botao-deletar);
+}
+
+.hover:hover {
+    opacity: 70%;
 }

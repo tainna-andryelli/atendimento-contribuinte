@@ -1,32 +1,38 @@
 @extends('template.template')
 
 @section('content')
-  <h1>Visualizar</h1>
+  <h1>Visualizar Protocolo</h1>
 
-  <div>
-    Número: {{$protocolo->numero}} <br>
-    Descrição: {{$protocolo->descricao}} <br>
-    Data: {{$protocolo->data}} <br>
-    Prazo (dias): {{$protocolo->prazo}} <br>
-    Contribuinte: <br>
-    @php
-    $pessoa = $protocolo->relPessoa;
-    echo 'Nome: '.$pessoa->nome;
-    echo '<br>';
-    $dados = ['Cidade: ', 'Bairro: ', 'Rua: ', 'Complemento: '];
-    $dadosBanco = ['cidade', 'bairro', 'rua', 'complemento'];
-
-    foreach ($dados as $indice => $dadoAtual) {
-        echo $dadoAtual;
-
+  <div class="visualizar__protocolo">
+    <p><strong>Número:</strong> {{$protocolo->numero}}</p>
+    <p><strong>Descrição:</strong> {{$protocolo->descricao}}</p>
+    <p><strong>Data: </strong>{{$protocolo->data}}</p>
+    <p><strong>Prazo (dias):</strong> {{$protocolo->prazo}}</p>
+    <p><strong>Contribuinte:</strong><p> 
+    <div class="contribuite__div">
+      @php
+      $pessoa = $protocolo->relPessoa;
+      echo '<strong>'.'Nome: '.'</strong>'.$pessoa->nome;
+      echo '<br>';
+      $dados = ['Cidade: ', 'Bairro: ', 'Rua: ', 'Complemento: '];
+      $dadosBanco = ['cidade', 'bairro', 'rua', 'complemento'];
+      
+      foreach ($dados as $indice => $dadoAtual) {
+        echo '<strong>'. $dadoAtual . '</strong>';
+      
         if ($pessoa->{$dadosBanco[$indice]} === null) {
-            echo 'Sem informação.';
+          echo 'Sem informação.';
         } else {
-            echo $pessoa->{$dadosBanco[$indice]};
+          echo $pessoa->{$dadosBanco[$indice]};
         }
+      
+          echo '<br>'; 
+        }
+      @endphp
+    </div>
 
-        echo '<br>'; 
-    }
-    @endphp
+    <a href="{{url("protocolo")}}">
+      <button class="hover">Voltar</button>
+    </a>
   </div>
 @endsection

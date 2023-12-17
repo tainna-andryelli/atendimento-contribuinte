@@ -1,0 +1,26 @@
+.cabecalho {
+    display: flex;
+    flex-wrap: wrap;
+    color: var(--branco);
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.cabecalho_titulo {
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.cabecalho__links {
+    color: var(--branco);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    justify-self: center;
+    gap: 20px;
+}
+
+.cabecalho__links a {
+    color: var(--cinza-1);
+}

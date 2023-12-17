@@ -1,0 +1,17 @@
+.pagina__visualizar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.visualizar__protocolo,
+.contribuite__div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contribuite__div {
+    border-left: 2px solid var(--cinza-1);
+    padding-left: 10px;
+}

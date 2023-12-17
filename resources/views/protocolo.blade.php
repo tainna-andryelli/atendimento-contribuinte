@@ -11,7 +11,7 @@
 
 <div>
   @csrf
-  <table>
+  <table class="tabela">
     <thead>
       <tr>
         <th>Número</th>
@@ -32,17 +32,18 @@
           <td>{{$pessoa->nome}}</td>
           <td>
             <a href="{{url("protocolo/$protocolos->numero")}}">
-              <button>Visualizar</button>
+              <button class="visualizar hover">Visualizar</button>
             </a>
             <a href="{{url("protocolo/$protocolos->numero/edit")}}">
-              <button>Editar</button>
+              <button class="editar hover">Editar</button>
             </a>
             <a href="{{url("protocolo/$protocolos->numero")}}" class="js-del">
-              <button class="protocolo">Deletar</button>
+              <button class="protocolo deletar hover">Deletar</button>
             </a>
           </td>
         </tr>
       @endforeach
     </tbody>
   </table>
+</div>
 @endsection

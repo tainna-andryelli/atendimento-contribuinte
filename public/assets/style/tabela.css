@@ -1,0 +1,30 @@
+.tabela {
+    border: 2px solid var(--cinza-2);
+    border-radius: 4px;
+    margin: 20px 0;
+    width: 100%;
+    padding: 20px 10px;
+}
+
+.tabela thead {
+    background-color: var(--cinza-1);
+}
+
+.tabela th {
+    border-radius: 4px;
+    padding: 5px 20px;
+}
+
+.tabela td {
+    text-align: center;
+}
+
+.tabela tr {
+    margin: 10px 0;
+}
+
+@media (max-width: 1080px) {
+    .tabela button {
+        font-size: 0.875rem;
+    }
+}
