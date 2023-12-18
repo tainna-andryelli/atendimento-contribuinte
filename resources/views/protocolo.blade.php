@@ -49,5 +49,6 @@
       @endforeach
     </tbody>
   </table>
+    {{ $protocolo->links() }}
 </div>
 @endsection

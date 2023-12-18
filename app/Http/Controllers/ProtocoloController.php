@@ -22,7 +22,7 @@ class ProtocoloController extends Controller
      */
     public function index()
     {
-        $protocolo = $this->objProtocolo->all();
+        $protocolo = $this->objProtocolo->paginate(10);
         return view('protocolo', compact('protocolo'));
     }
 

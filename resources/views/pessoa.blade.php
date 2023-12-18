@@ -54,5 +54,6 @@
       @endforeach
     </tbody>
   </table>
+  {{$pessoa->links()}}
 </div>
 @endsection

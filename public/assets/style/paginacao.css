@@ -1,0 +1,40 @@
+.paginacao {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.paginacao__numeros {
+    background-color: var(--cinza-0);
+    color: var(--cinza-2);
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    border-radius: 12px;
+    border: 2px solid var(--cinza-2);
+}
+
+.svg-paginacao {
+    width: 30px;
+}
+
+.clicavel:hover {
+    opacity: 30%;
+}
+
+.nao__clicavel {
+    fill: var(--cinza-1);
+}
+
+.pagina__atual {
+    border-radius: 4px;
+    padding: 2px 6px;
+    background-color: var(--cinza-2);
+    color: var(--cinza-0);
+}
+
+.seta__paginacao__center {
+    display: flex;
+}
