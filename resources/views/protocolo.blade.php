@@ -34,7 +34,7 @@
           ?>
           <td>{{$data_formatada}}</td>
           <td>{{$pessoa->nome}}</td>
-          <td>
+          <td class="tabela__acoes">
             <a href="{{url("protocolo/$protocolos->numero")}}">
               <button class="visualizar hover">Visualizar</button>
             </a>

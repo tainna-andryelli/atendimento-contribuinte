@@ -22,9 +22,3 @@
 .tabela tr {
     margin: 10px 0;
 }
-
-@media (max-width: 1080px) {
-    .tabela button {
-        font-size: 0.875rem;
-    }
-}

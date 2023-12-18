@@ -38,7 +38,7 @@
       <div class="formulario__div">
         <label>Contribuinte:*</label>
         <select class="input__options" name="contribuinte" id="contribuinte" required>
-          <option value="{{$protocolo->relPessoa->nome ?? ''}}">Selecione</option>
+          <option value="{{$protocolo->relPessoa->nome ?? ''}}">{{$protocolo->relPessoa->nome ?? 'Selecione'}}</option>
           @foreach($pessoas as $pessoa)
             <option value="{{$pessoa->id}}">{{$pessoa->nome}}</option>
           @endforeach

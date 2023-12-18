@@ -35,3 +35,25 @@
         }
     }
 })(window, document);
+
+document.addEventListener("DOMContentLoaded", function () {
+    if (document.getElementById("cpf")) {
+        document
+            .getElementById("formPes")
+            .addEventListener("submit", function (event) {
+                if (!validarCPF()) {
+                    event.preventDefault();
+                    alert("O campo CPF deve conter 11 dígitos.");
+                }
+            });
+
+        function validarCPF() {
+            var cpf = document.getElementById("cpf").value;
+
+            if (cpf.length !== 11) {
+                return false;
+            }
+            return true;
+        }
+    }
+});

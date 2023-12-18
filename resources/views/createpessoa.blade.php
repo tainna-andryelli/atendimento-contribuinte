@@ -13,10 +13,10 @@
     @endif 
 
     @if(isset($pessoa))
-      <form class="formulario" name="formEdit" id="formEditPes" method="post" action="{{url("pessoa/$pessoa->id")}}">
+      <form class="formulario" name="formEdit" id="formPes" method="post" action="{{url("pessoa/$pessoa->id")}}">
         @method('PUT')
     @else
-      <form class="formulario" name="formCad" id="formCadPes" method="post" action="{{url('pessoa')}}">
+      <form class="formulario" name="formCad" id="formPes" method="post" action="{{url('pessoa')}}">
     @endif
 
       @csrf
@@ -37,14 +37,14 @@
 
       <div class="formulario__div">
         <label>Sexo:*</label>
-        <select class="input__options" name="sexo" id="sexo">
-          <option>Selecione</option>
-          <option value="masculino">Masculino</option>
-          <option value="feminino">Feminino</option>
-          <option value="transgênero">Transgênero</option>
-          <option value="gênero neutro">Gênero Neutro</option>
-          <option value="não-binário">Não-Binário</option>
-          <option value="outro">Outro</option>
+        <select class="input__options" name="sexo" id="sexo" required>
+          <option value="{{$pessoa->sexo ?? ''}}">{{$pessoa->sexo ?? 'Selecione'}}</option>
+          <option value="Masculino">Masculino</option>
+          <option value="Feminino">Feminino</option>
+          <option value="Transgênero">Transgênero</option>
+          <option value="Gênero neutro">Gênero Neutro</option>
+          <option value="Não-binário">Não-Binário</option>
+          <option value="Outro">Outro</option>
         </select>
       </div>
 

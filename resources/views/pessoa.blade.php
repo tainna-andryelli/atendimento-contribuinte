@@ -39,7 +39,7 @@
           ?>
           <td>{{$cpf_formatado}}</td>
           <td>{{$pessoas->sexo}}</td>
-          <td>
+          <td class="tabela__acoes">
             <a href="{{url("pessoa/$pessoas->id")}}">
               <button class="visualizar hover">Visualizar</button>
             </a>
