@@ -31,8 +31,8 @@ Este desafio prático consiste na criação de um sistema de atendimento ao Cont
 - [Tailwind CSS](https://tailwindcss.com/docs/installation)
 
 ## 🎲 Configuração do Banco de Dados
-
-- Crie um banco de dados MySQL chamado 'contribuinte'.
+- O banco de dados que foi utilizado por mim foi exportado na pasta 'banco de dados', mas você também pode:
+- Criar um banco de dados MySQL chamado 'contribuinte'.
 - Copie o arquivo **.env.example** para **.env** e configure as variáveis de ambiente relacionadas ao banco de dados:
 
 ```
@@ -40,7 +40,7 @@ DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=contribuinte
-DB_USERNAME=root
+DB_USERNAME=seu_usuario
 DB_PASSWORD=
 ```
 - Para criar as tabelas do banco, execute no cmd:
