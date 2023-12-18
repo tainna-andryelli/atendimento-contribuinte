@@ -3,10 +3,14 @@
 @section('content')
 <h1>Protocolos Registrados</h1>
 
-<div>
+<div class="cabecalho__tabela">
   <a href="{{url("protocolo/create")}}">
     <button>Novo Protocolo</button>
   </a>
+  <form action="{{url("/protocolo")}}">
+      <input class="pesquisa" type="text" name="pesquisa" placeholder="Digite aqui" value="{{$pesquisa}}">
+      <button class="hover" type="submit">Pesquisar</button>
+  </form>
 </div>
 
 <div>

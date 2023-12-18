@@ -1,0 +1,10 @@
+.cabecalho__tabela {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pesquisa {
+    padding: 10px;
+    border-radius: 4px;
+    border: 2px solid var(--cinza-1);
+}

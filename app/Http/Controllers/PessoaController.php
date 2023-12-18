@@ -18,8 +18,15 @@ class PessoaController extends Controller
      */
     public function index()
     {
-        $pessoa = $this->objPessoa->paginate(10);
-        return view('pessoa', compact('pessoa'));
+        $pesquisa = request()->query('pesquisa');
+
+        if($pesquisa){
+            $pessoa = ModelPessoa::where('id', 'LIKE', "%{$pesquisa}%")->orWhere('nome', 'LIKE', "%{$pesquisa}%")->orWhere('data_nasc', 'LIKE', "%{$pesquisa}%")->orWhere('cpf', 'LIKE', "%{$pesquisa}%")->orWhere('sexo', 'LIKE', "%{$pesquisa}%")->paginate(5);
+        } else {
+            $pessoa = $this->objPessoa->paginate(10);
+        }
+
+        return view('pessoa', compact('pessoa', 'pesquisa'));
     }
 
     /**

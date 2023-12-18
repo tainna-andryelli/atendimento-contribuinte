@@ -3,10 +3,14 @@
 @section('content')
 <h1>Pessoas Cadastradas</h1>
 
-<div>
+<div class="cabecalho__tabela">
   <a class="hover" href="{{url("pessoa/create")}}">
     <button>Novo Cadastro</button>
   </a>
+  <form action="{{url("/pessoa")}}">
+      <input class="pesquisa" type="text" name="pesquisa" placeholder="Digite aqui" value="{{$pesquisa}}">
+      <button class="hover" type="submit">Pesquisar</button>
+  </form>
 </div>
 
 <div>

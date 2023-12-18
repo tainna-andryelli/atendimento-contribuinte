@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/assets/style/visualizar.css">
     <link rel="stylesheet" href="/assets/style/rodape.css">
     <link rel="stylesheet" href="/assets/style/paginacao.css">
+    <link rel="stylesheet" href="/assets/style/pesquisa.css">
     <title>Atendimento ao Contribuinte</title>
   </head>
   <body>

@@ -22,8 +22,18 @@ class ProtocoloController extends Controller
      */
     public function index()
     {
-        $protocolo = $this->objProtocolo->paginate(10);
-        return view('protocolo', compact('protocolo'));
+        $pesquisa = request()->query('pesquisa');
+        
+        $protocolo = ModelProtocolo::with('relPessoa');
+
+        if($pesquisa){
+            $protocolo->where('numero', 'LIKE', "%{$pesquisa}%")->orWhere('data', 'LIKE', "%{$pesquisa}%")->orWhereHas('relPessoa', function ($query) use ($pesquisa){
+                $query->where('nome', 'LIKE', "%{$pesquisa}%");
+            });
+        }
+
+        $protocolo = $protocolo->paginate(5);
+        return view('protocolo', compact('protocolo', 'pesquisa'));
     }
 
     /**
