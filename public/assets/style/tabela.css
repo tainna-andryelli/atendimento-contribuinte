@@ -7,7 +7,12 @@
 }
 
 .tabela thead {
-    background-color: var(--cinza-1);
+    background-color: var(--cinza-2);
+    color: var(--branco);
+}
+
+.tabela tbody tr:nth-child(2n) {
+    background-color: var(--cinza-0);
 }
 
 .tabela th {
@@ -19,6 +24,34 @@
     text-align: center;
 }
 
-.tabela tr {
-    margin: 10px 0;
+@media (max-width: 1000px) {
+    .tabela__acoes {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .tabela__acoes button {
+        width: calc(100% - 10px);
+    }
+}
+
+@media (max-width: 800px) {
+    .tabela thead {
+        display: none;
+    }
+
+    .tabela tbody td {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .tabela__acoes button {
+        width: 50%;
+    }
+}
+
+@media (max-width: 500px) {
+    .tabela__acoes button {
+        width: 100%;
+    }
 }

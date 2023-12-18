@@ -16,7 +16,7 @@
       <tr>
         <th>Id</th>
         <th>Nome</th>
-        <th>Data de Nascimento</th>
+        <th>Nascimento</th>
         <th>CPF</th>
         <th>Sexo</th>
         <th>Ação</th>
@@ -26,7 +26,7 @@
     <tbody>
       @foreach($pessoa as $pessoas)
         <tr>
-          <th>{{$pessoas->id}}</th>
+          <td>{{$pessoas->id}}</td>
           <td>{{$pessoas->nome}}</td>
           <?php
             $data = $pessoas->data_nasc;
