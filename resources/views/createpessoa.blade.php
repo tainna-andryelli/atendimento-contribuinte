@@ -32,8 +32,12 @@
       
       <div class="formulario__div">
         <label>CPF: (somente números)*</label>
-        <input type="number" name="cpf" id="cpf" value="{{$pessoa->cpf ?? ''}}" required>
+        <input type="text" name="cpf" id="cpf" value="{{$pessoa->cpf ?? ''}}" oninput="javascript: retirarFormatacao(this);" onblur="javascript: formatarCpf(this);" required>
       </div>
+
+      <script>
+        console.log()
+      </script>
 
       <div class="formulario__div">
         <label>Sexo:*</label>

@@ -43,17 +43,31 @@ document.addEventListener("DOMContentLoaded", function () {
             .addEventListener("submit", function (event) {
                 if (!validarCPF()) {
                     event.preventDefault();
-                    alert("O campo CPF deve conter 11 dígitos.");
+                    alert("CPF inválido.");
+                } else {
+                    retirarFormatacao(document.getElementById("cpf"));
                 }
             });
 
         function validarCPF() {
             var cpf = document.getElementById("cpf").value;
 
-            if (cpf.length !== 11) {
+            if (cpf.length !== 14) {
                 return false;
             }
             return true;
         }
     }
 });
+
+function formatarCpf(cpf) {
+    cpf.value = cpf.value.replace(/\D/g, "");
+    cpf.value = cpf.value.replace(
+        /(\d{3})(\d{3})(\d{3})(\d{2})/,
+        "$1.$2.$3-$4"
+    );
+}
+
+function retirarFormatacao(cpf) {
+    cpf.value = cpf.value.replace(/\D/g, "");
+}
